@@ -57,17 +57,16 @@ without having the co-reg or pre-req class.
 % works best here, with rows for each critical data element, and columns
 % for name, description and use.
 
-\begin{center}
-    \begin{tabular}{|c|c|c|}
-        \hline
-        Name    & Description                                           & Use                                          \\ [0.5ex]
-        \hline\hline
-        Courses & Maintainers will upload the list of classes           & List of classes that the user can signup for \\
-        \hline
-        PDF     & PDF of the website to save the list of classes chosen & PDF of the classes chosen by the user        \\
-        \hline
-    \end{tabular}
-\end{center}
+\begin{table}[h]
+    \resizebox{\textwidth}{!}{
+        \begin{tabular}{|l|l|l|}
+            \hline
+            \textbf{Name} & \textbf{Description}                                           & \textbf{Use}                                 \\ \hline
+            Courses       & (External Input) Maintainers will upload the list of classes   & List of classes that the user can signup for \\ \hline
+            PDF           & (Output) PDF of the website to save the list of classes chosen & PDF of the classes chosen by the user        \\ \hline
+        \end{tabular}}
+    \caption{Overview of external inputs and outputs}
+\end{table}
 
 \subsection{Product Interfaces}
 Specify what all operational (visible) interfaces look like to your
