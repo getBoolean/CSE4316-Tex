@@ -49,13 +49,25 @@ There will be an error shown to the user if they choosen a class
 without having the co-reg or pre-req class.
 
 \subsection{External Inputs \& Outputs}
-Describe critical external data flows. What does your product
-require/expect to receive from end users or external systems (inputs),
-and what is expected to be created by your product for consumption by
-end users or external systems (outputs)? In other words, specify here
-all data/information to flow into and out of your systems. A table
-works best here, with rows for each critical data element, and columns
-for name, description and use.
+% Describe critical external data flows. What does your product
+% require/expect to receive from end users or external systems (inputs),
+% and what is expected to be created by your product for consumption by
+% end users or external systems (outputs)? In other words, specify here
+% all data/information to flow into and out of your systems. A table
+% works best here, with rows for each critical data element, and columns
+% for name, description and use.
+
+\begin{center}
+    \begin{tabular}{|c|c|c|}
+        \hline
+        Name    & Description                                           & Use                                          \\ [0.5ex]
+        \hline\hline
+        Courses & Maintainers will upload the list of classes           & List of classes that the user can signup for \\
+        \hline
+        PDF     & PDF of the website to save the list of classes chosen & PDF of the classes chosen by the user        \\
+        \hline
+    \end{tabular}
+\end{center}
 
 \subsection{Product Interfaces}
 Specify what all operational (visible) interfaces look like to your
