@@ -1,13 +1,25 @@
-Include a header paragraph specific to your product here. Performance requirements address items such as: how fast specific critical operations must complete; how long it takes to start/stop activities; how long the battery must last; maximum time it must take to set up; etc.
+The Interactive Degree Planner website is expected to support a large number of users; therefore, it should perform smoothly without any data loss or latency. The main purpose of this interactive planner is to optimize the user experience during the degree planning process, so it is ideal to maximize the performance of web navigation and web interaction.
 
-\subsection{Requirement Name}
+\subsection{Registration and Verification}
 \subsubsection{Description}
-Detailed requirement description...
+Assume registration process starts from the moment the user hits the register button (given that information is valid), the website should register the new user in the database within 1 second (given that the normal Internet connection), and no later than 10 seconds. Its login functionality has the same expectation.
 \subsubsection{Source}
-Source
+Team Idea
 \subsubsection{Constraints}
-Detailed description of applicable constraints...
+This requirement is not applicable when the user has a poor Internet connection.
 \subsubsection{Standards}
-List of applicable standards
+All user's information must be reliably saved in the database. The verification process for login functionality must at least search for the right key in the database before returning error.
 \subsubsection{Priority}
-Priority
+Medium
+
+\subsection{Drag and drop}
+\subsubsection{Description}
+Assume the Internet connection is normal and given a list of 500 items within a small amount of displacement, the delay for dragging and dropping should not exceed 3 seconds.
+\subsubsection{Source}
+Team Idea
+\subsubsection{Constraints}
+This requirement is not applicable when the user has a poor Internet connection.
+\subsubsection{Standards}
+When the cursor points to a certain item, the website at least highlight the item and start the drag.
+\subsubsection{Priority}
+High

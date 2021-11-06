@@ -1,32 +1,98 @@
-Include a header paragraph specific to your product here. Customer requirements are those required features and functions specified for and by the intended audience for this product. This section establishes, clearly and concisely, the "look and feel" of the product, what each potential end-user should expect the product do and/or not do. Each requirement specified in this section is associated with a specific customer need that will be satisfied. In general Customer Requirements are the directly observable features and functions of the product that will be encountered by its users. Requirements specified in this section are created with, and must not be changed without, specific agreement of the intended customer/user/sponsor.
+This section will speak about the customer requirements that we will be using the implement the web application.
 
-\subsection{Requirement Name}
+\subsection{Registration}
 \subsubsection{Description}
-A detailed description of the feature/function that satisfies the requirement. For example: \textit{The GUI background will be slate blue. This specific color is required in order to ensure that the GUI matches other similar software products offered by the customer. Slate blue is specified as \#007FFF, using six-digit hexadecimal color specification.} It is acceptable and advisable to include drawings/graphics in the description if it aids understanding of the requirement.
+Initially, students must register the accounts in order to use the website. Required information includes emails, username, and password. Additional information may be asked, but not mandatory. After the registration succeeds, the students will be able to login to the website.
 \subsubsection{Source}
-The source of the requirement (e.g. customer, sponsor, specified team member (by name), federal regulation, local laws, CSE Senior Design project specifications, etc.)
+Team Idea
 \subsubsection{Constraints}
-A detailed description of realistic constraints relevant to this requirement. Economic, environmental, social, political, ethical, health \& safety, manufacturability, and sustainability should be discussed as appropriate.
+None
 \subsubsection{Standards}
-A detailed description of any specific standards that apply to this requirement (e.g. \textit{NSTM standard xx.xxx.x. color specifications \cite{Rubin2012}}. Standards exist for practically everything (ATC standard fuses, IEEE 802.15.4 embedded wireless, TLS 1.3 encryption, etc.), so be sure that you research and document which ones will be followed in meeting this requirement.
+None
 \subsubsection{Priority}
-The priority of this requirement relative to other specified requirements. Use the following priorities:
-\begin{itemize}
-\item Critical (must have or product is a failure)
-\item High (very important to customer acceptance, desirability)
-\item Moderate (should have for proper product functionality);
-\item Low (nice to have, will include if time/resource permits)
-\item Future (not feasible in this version of the product, but should be considered for a future release).
-\end{itemize}
+High
 
-\subsection{Requirement Name}
+\subsection{Login}
 \subsubsection{Description}
-Detailed requirement description...
+If the users are registered, he/she should be able to login in the system using the authenticated credential.
 \subsubsection{Source}
-Source
+Team Idea
 \subsubsection{Constraints}
-Detailed description of applicable constraints...
+Students must be registered in the system.
 \subsubsection{Standards}
-List of applicable standards
+None
 \subsubsection{Priority}
-Priority
+High
+
+\subsection{Drag and Drop}
+\subsubsection{Description}
+The web app will have a GUI which allows users to drag and drop classes into their degree plan. The drag and drop will allow a class to be clicked on and then dragged to the user's intended semester in which they will take the class, and finally dropped if that is the semester they intend to take that specific class.
+\subsubsection{Source}
+Team Idea
+\subsubsection{Constraints}
+A constraint for drag and drop is when the user drags a class and they let it go, if there is no valid place to drop that class into, then it should return to where it came from. It should drag and drop only to boxes that are intended to be filled. There should be a limit to where the drops can be made. For example, if the user drags a class and drops it in between two semesters, then it should not just drop there. Instead, it should choose the closer box or it should return back to where it came from. 
+\subsubsection{Standards}
+None
+\subsubsection{Priority}
+High
+
+\subsection{Semesters}
+\subsubsection{Description}
+The web app will have sections of semesters. They will allow the users to add classes with the drag and drop feature allowing the user to plan their degree. The user can also take classes away from a semester and move it into another semester or back to the class list. 
+\subsubsection{Source}
+Team Idea
+\subsubsection{Constraints}
+Some constraints for this requirement are that there should only be a certain number of classes within a semester. Uta only permits 20 hours in a normal semester and 9 hours in a summer semester. The semester boxes will have to account for the amount of hours a student adds into it.  
+\subsubsection{Standards}
+None
+\subsubsection{Priority}
+High
+
+\subsection{List of Classes}
+\subsubsection{Description}
+The app will have a list that contains all the classes that the user can select from. It will allow the user to select which classes they want to drag and drop into the desired semester that they choose. The list of classes will be ones that are offered at UTA. There will also be a search bar to make it easier for the user to search through the list and make it more easier to select a specific class that they have in mind. 
+\subsubsection{Source}
+Team Idea
+\subsubsection{Constraints}
+The list of classes will have constraints such as only listing classes that are offered at UTA. 
+\subsubsection{Standards}
+None
+\subsubsection{Priority}
+High
+
+\subsection{Accounts}
+\subsubsection{Description}
+Users will all have their own degree plan. They can choose which classes they want in each semester. To make this happen, there needs to be accounts for the users to separate the data. This will allow the user to save their own unique data and give them access to create their degree plan in the order they choose. 
+\subsubsection{Source}
+Team Idea
+\subsubsection{Constraints}
+The account should be secured and data should not be leaked. Moreover, the users account credentials should be verified to make sure they are part of the UTA system. The user will need to be a UTA student or have valid UTA credentials, which will allow them to access the degree 
+\subsubsection{Standards}
+None
+\subsubsection{Priority}
+Medium
+
+\subsection{Majors}
+\subsubsection{Description}
+The degree planner app must work off the major of the user. If the user has a different major then there should be a different list of classes for the user to drag and drop into semesters. There will be a selection box for the user to select their major and once the major is selected, the user will be able to drag and drop classes from the list that major has in order to complete that degree.  
+\subsubsection{Source}
+Team Idea
+\subsubsection{Constraints}
+Constraints for this requirement are that the user cannot add different classes from different majors. They are not allowed to mix and match. For example, the user can't select a business major and drag and drop classes into their semester if they already have another majors classes in their degree plan. The user is only allowed to select from the classes provided in that major alone.  
+\subsubsection{Standards}
+None
+\subsubsection{Priority}
+High
+
+\subsection{Security}
+\subsubsection{Description}
+The website should provide secure service.
+\subsubsection{Source}
+Team Idea
+\subsubsection{Constraints}
+The information should be protected properly.
+\subsubsection{Standards}
+None
+\subsubsection{Priority}
+Medium
+
