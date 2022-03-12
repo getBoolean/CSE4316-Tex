@@ -1,41 +1,131 @@
-In this section, the layer is described in terms of the hardware and software design. Specific implementation details, such as hardware components, programming languages, software dependencies, operating systems, etc. should be discussed. Any unnecessary items can be omitted (for example, a pure software module without any specific hardware should not include a hardware subsection). The organization, titles, and content of the sections below can be modified as necessary for the project.
+The Degree Planner UI layer consists of Web application, Course catalog, Semester catalog, and Export subsystem. It is responsible for processing/displaying information related to degree planning tasks and interacting with the users. Important to notice, only authenticated users can access this layer.
 
 \subsection{Layer Hardware}
-A description of any involved hardware components for the layer. For example, if each subsystem is a software process running on an embedded computer, discuss the specifics of that device here. Do not list a hardware component that only exists at the subsystem level (include it in the following sections).
+The Degree Planner UI layer uses the screen of any devices having web browser(s).
 
 \subsection{Layer Operating System}
-A description of any operating systems required by the layer.
+The Degree Planner UI does not require any specific operating system since it is a web-based application running on any web browser.
 
 \subsection{Layer Software Dependencies}
-A description of any software dependencies (libraries, frameworks, etc) required by the layer.
+The Degree Planner UI is a web-based application built with React and Node.js. It is implemented with React libraries, including react-beautiful-dnd and styled-component. React Router takes responsibility for navigating.
 
-\subsection{Subsystem 1}
-Describe at a high level the purpose and basic design of this subsystem. Is it a piece of hardware, a class, a web service, or something else? Note that each of the subsystem items below are meant to be specific to that subsystem and not a repeat of anything discussed above for the overall layer.
+\subsection{Web Application}
+Web application subsystem provides the user interface for the process of planning degree. The two fundamental goals of this layer is to display information and to interact with user. All courses corresponding to the users' major will be displayed in this UI. The users are capable of dragging course items and drop them into any semester columns.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %  BE SURE TO UPDATE THE IMAGE CAPTION
 \begin{figure}[h!]
 	\centering
- 	\includegraphics[width=0.60\textwidth]{images/subsystem} % Image
- \caption{Example subsystem description diagram} % Caption
+ 	\includegraphics[width=0.60\textwidth]{images/WebApplication} % Image
+ \caption{Web Application Subsystem} % Caption
 \end{figure}
 
 \subsubsection{Subsystem Hardware}
-A description of any involved hardware components for the subsystem.
+See section 3.1.
 
 \subsubsection{Subsystem Operating System}
-A description of any operating systems required by the subsystem.
+See section 3.2.
 
 \subsubsection{Subsystem Software Dependencies}
-A description of any software dependencies (libraries, frameworks, design software for mechanical parts or circuits, etc) required by the subsystem.
+See section 3.3.
 
 \subsubsection{Subsystem Programming Languages}
-A description of any programming languages used by the subsystem.
+This subsystem uses React with TypeScipt, and CSS.
 
 \subsubsection{Subsystem Data Structures}
-A description of any classes or other data structures that are worth discussing for the subsystem. For example, data being transmitted from a microcontroller to a PC via USB should be first be assembled into packets. What is the structure of the packets?
+No particular data structure is required.
 
 \subsubsection{Subsystem Data Processing}
-A description of any algorithms or processing strategies that are worth discussing for the subsystem. If you are implementing a well-known algorithm, list it. If it is something unique to this project, discuss it in greater detail.
+Any data retrieved from Firestore database will be processed and formatted in Course and Semester subsystem. Web Application subsystem only receives the processed data from other subsystems and displays it to users.
+
+\subsection{Course Catalog}
+Course catalog subsystem fetches data from the database and sends it to the Web application subsystem. It is basically an interface between the Degree Planner UI layer and Firebase database layer.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%  BE SURE TO UPDATE THE IMAGE CAPTION
+\begin{figure}[h!]
+	\centering
+ 	\includegraphics[width=0.60\textwidth]{images/CourseCatalog} % Image
+ \caption{CourseCatalog Subsystem} % Caption
+\end{figure}
+
+\subsubsection{Subsystem Hardware}
+See section 3.1.
+
+\subsubsection{Subsystem Operating System}
+See section 3.2.
+
+\subsubsection{Subsystem Software Dependencies}
+It will be implemented using the react-firebase library as well as Firestore database. For more information, see section 3.3.
+
+\subsubsection{Subsystem Programming Languages}
+This subsystem uses React with TypeScipt, and CSS.
+
+\subsubsection{Subsystem Data Structures}
+Each course retrieved from Firestore database into this subsystem has class Course. This user-defined object consists of nine properties, including document id, course id, course number, department, description, majors, availability, co-requisite, and pre-requisite courses. 
+
+\subsubsection{Subsystem Data Processing}
+This subsystem will receive data from Firestore database and process the data. It will then give that data to the web application subsystem. 
+
+\subsection{SemesterCatalog}
+Semester catalog subsystem reads data from the user information, and sends it to the Web application subsystem. It is basically an interface between UI layer and Dashboard layer. 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%  BE SURE TO UPDATE THE IMAGE CAPTION
+\begin{figure}[h!]
+	\centering
+ 	\includegraphics[width=0.60\textwidth]{images/SemesterCatalog} % Image
+ \caption{SemesterCatalog Subsystem} % Caption
+\end{figure}
+
+\subsubsection{Subsystem Hardware}
+See section 3.1.
+
+\subsubsection{Subsystem Operating System}
+See section 3.2.
+
+\subsubsection{Subsystem Software Dependencies}
+See section 3.3. 
+
+\subsubsection{Subsystem Programming Languages}
+This subsystem uses React with TypeScipt, and CSS.
+
+\subsubsection{Subsystem Data Structures}
+No particular data structure is required.
+
+\subsubsection{Subsystem Data Processing}
+This subsystem will read data and process the data into a Course object and send it to the web application system.
+
+\vspace{100cm}
+
+\subsection{Export}
+Export subsystem will retrieve the degree planner from Web Application subsystem and write it to file.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%  BE SURE TO UPDATE THE IMAGE CAPTION
+\begin{figure}[h!]
+	\centering
+ 	\includegraphics[width=0.60\textwidth]{images/Export} % Image
+ \caption{Export Subsystem} % Caption
+\end{figure}
+
+\subsubsection{Subsystem Hardware}
+See section 3.1.
+
+\subsubsection{Subsystem Operating System}
+See section 3.2.
+
+\subsubsection{Subsystem Software Dependencies}
+To read the exported file, users may need a separate reader software to view the file based on its format. For more information, see section 3.3.
+
+\subsubsection{Subsystem Programming Languages}
+This subsystem uses React with TypeScipt, and CSS.
+
+\subsubsection{Subsystem Data Structures}
+No particular data structure is required.
+
+\subsubsection{Subsystem Data Processing}
+This subsystem may receive data in format of Course object, but only write significant details to file.
+
+
 
 

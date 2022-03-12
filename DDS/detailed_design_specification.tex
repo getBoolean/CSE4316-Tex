@@ -31,9 +31,9 @@
 \definecolor{accentcolor}{rgb}{0.0,0.0,0.5} 
 \newcommand{\teamname}{Team IDP}
 \newcommand{\productname}{Interactive Degree Planner}
-\newcommand{\coursename}{CSE 4316: Senior Design I}
-\newcommand{\semester}{Fall 2021}
-\newcommand{\docname}{Architectural Design Specification}
+\newcommand{\coursename}{CSE 4317: Senior Design II}
+\newcommand{\semester}{Spring 2022}
+\newcommand{\docname}{Details Design Specification}
 \newcommand{\department}{Department of Computer Science \& Engineering}
 \newcommand{\university}{The University of Texas at Arlington}
 \newcommand{\authors}{Daniel Newville \\ Le Uyen Nguyen \\ Ijaz Mohamed Umar \\ Safi Ullah}
@@ -75,7 +75,7 @@
 \vspace{0.5 in}
 \begin{figure}[h!]
 	\centering
-   	\includegraphics[width=0.60\textwidth]{images/test_image} % Change to correct image file
+   	\includegraphics[width=0.60\textwidth]{images/MavDegreePlannerDiagram} % Change to correct image file
 \end{figure}
 \vspace{0.5 in}
 {\centering \huge \color{accentcolor} \sc \textbf{\teamname \\ \productname} \par}
@@ -95,6 +95,8 @@
 \begin{versionhistory}
   	\vhEntry{0.1}{02.24.2022}{DN}{document creation}
   	\vhEntry{0.2}{02.24.2022}{DN, IU, SU, LN}{document draft}
+  	\vhEntry{0.3}{03.08.2022}{DN, IU, SU, LN}{document update}
+  	\vhEntry{0.4}{03.09.2022}{DN, IU, SU, LN}{document complete}
 \end{versionhistory}
 \newpage
 
@@ -120,13 +122,13 @@
 %\section{Subsystem Definitions \& Data Flow}
 %\input{tex/data_flow.tex}
 \newpage
-\section{X Layer Subsystems}
+\section{Degree Planner UI Layer}
 \input{tex/x_layer_subsystems.tex}
 \newpage
-\section{Y Layer Subsystems}
+\section{Firebase Layer}
 \input{tex/y_layer_subsystems.tex}
 \newpage
-\section{Z Layer Subsystems}
+\section{Dashboard Layer}
 \input{tex/z_layer_subsystems.tex}
 \newpage
 \section{Appendix A}
