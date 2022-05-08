@@ -1,4 +1,4 @@
-The Degree Planner UI layer consists of Web application, Course catalog, Semester catalog, and Export subsystem. The main functionality of this layer is to provide the user interface, where the user is able to prepare his/her degree plan and view the related information. Among the above-mentioned subsystems, the Web application handles the most of the task, while the rest support
+The Degree Planner UI layer consists of Web application, Course catalog, and Semester catalog. The main functionality of this layer is to provide the user interface, where the user is able to prepare his/her degree plan and view the related information. Among the above-mentioned subsystems, the Web application handles the most of the task, while the rest support
 
 \subsection{Web Application}
 Web application subsystem provides the user interface for the process of planning degree. The two fundamental goal of this layer is to display information and to interact with user.
@@ -23,7 +23,7 @@ The subsystem does not provide any functionality to modify data and no data chan
 \end{itemize}
 
 \subsubsection{Responsibilities}
-This subsystem takes responsibility to display the required information, including: the user's major, list of courses for the corresponding major, list of semesters, estimated graduation date, total hours per semester, and etc. All data fetched from external sources are assumed to be up-to-date and cannot be modified in this layer. The user will perform planning tasks, such as drag and drop to add and/or remove courses. That is, the list of course objects from Course catalog subsystem will be made draggable, while the area/column for each available semester will become droppable. Besides, there will be navigation options to link to Export subsystem.
+This subsystem takes responsibility to display the required information, including: the user's major, list of courses for the corresponding major, list of semesters, total hours per semester, and etc. All data fetched from external sources are assumed to be up-to-date and cannot be modified in this layer. The user will perform planning tasks, such as drag and drop to add and/or remove courses. That is, the list of course objects from Course catalog subsystem will be made draggable, while the area/column for each available semester will become droppable. Besides, there will be navigation options to link to Export subsystem.
 
 \subsubsection{Subsystem Interfaces}
 
@@ -37,7 +37,6 @@ This subsystem takes responsibility to display the required information, includi
     \#2 & Display courses & \pbox{6cm}{Object of every element in the list of courses provided by Course catalog subsystem} & \pbox{3cm}{Screen}  \\ \hline
     \#3 & Search for courses & \pbox{6cm}{Text \\ Numbers} & \pbox{3cm}{Object of the searched course}  \\ \hline
     \#4 & Display semesters & \pbox{6cm}{List of semesters} & \pbox{3cm}{Screen}  \\ \hline
-    \#5 & Export & \pbox{6cm}{N/A} & \pbox{3cm}{Navigation to Export subsystem}  \\ \hline
     \end{tabular}
 \end{center}
 \end{table}
@@ -80,6 +79,7 @@ This subsystem will take input, i.e., major, from the web application subsystem,
     ID & Description & Inputs & Outputs \\ \hline
     \#1 & Fetch data & \pbox{3cm}{Text} & \pbox{7cm}{Database response with the list of courses from selected major}  \\ \hline
     \#2 & Process data & \pbox{3cm}{Queries} & \pbox{7cm}{List of objects}  \\ \hline
+    \#3 & Calculate total hours & \pbox{3cm}{Queries} & \pbox{7cm}{Number}  \\ \hline
     \end{tabular}
 \end{center}
 \end{table}
@@ -104,7 +104,7 @@ The subsystem cannot modify data fetched from the Dashboard. It does not provide
 \end{itemize}
 
 \subsubsection{Responsibilities}
-This subsystem automatically reads the user's starting semester and returns the list of all valid and available semesters to the Web application subsystem. That is, the estimated duration for pursuing a degree in the department of Computer Science and Engineering at the University of Texas at Arlington is 4 years; therefore, the maximum duration for degree completion would be 10 years. The list of semesters will include the starting semester and all subsequent semesters in the next 10 years.
+This subsystem automatically reads the user's starting semester and returns the list of all valid and available semesters to the Web application subsystem.
 
 \subsubsection{Subsystem Interfaces}
 
